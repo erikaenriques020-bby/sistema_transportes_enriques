@@ -1,0 +1,43 @@
+@import '../../vendor/filament/filament/resources/css/theme.css';
+
+@source '../views/filament/**/*.blade.php';
+@source '../../app/Filament/**/*.php';
+
+.fleet-console {
+    display: grid;
+    grid-template-columns: 340px minmax(0, 1fr);
+    gap: 12px;
+    height: max(560px, calc(100dvh - 245px));
+}
+.fleet-console-wide { grid-template-columns: minmax(0, 1fr); }
+@media (max-width: 1023px) {
+    .fleet-console { grid-template-columns: minmax(0, 1fr); height: auto; }
+    .fleet-console > section:first-child { max-height: 320px; }
+    .fleet-console > section:last-child { height: 720px; }
+    .fleet-detail { width: min(288px, calc(100% - 24px)); }
+}
+
+.report-records-page .fi-ta-content-ctn {
+    max-height: calc(100dvh - 20rem);
+    overflow: auto;
+    overscroll-behavior: contain;
+}
+
+.report-records-page .fi-ta-table {
+    min-width: max-content;
+}
+
+.report-records-page .fi-ta-table thead th {
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    background-color: #f9fafb;
+}
+
+.dark .report-records-page .fi-ta-table thead th {
+    background-color: #111827;
+}
+
+.report-records-page .fi-ta-text-input {
+    min-width: 11rem;
+}
